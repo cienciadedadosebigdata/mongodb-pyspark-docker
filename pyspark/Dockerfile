@@ -4,10 +4,11 @@ FROM ubuntu:focal
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 RUN apt-get update -y \
-    && apt-get install -y wget python-dev openjdk-8-jre-headless python-pip nano\
+    && apt-get install -y wget python3-dev openjdk-8-jre-headless python3-pip nano\
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip install --upgrade pip
 RUN pip install pymongo
 
 RUN useradd --create-home --shell /bin/bash ubuntu
@@ -16,7 +17,7 @@ ENV HOME /home/ubuntu
 ENV SPARK_VERSION 3.3.0
 ENV HADOOP_VERSION 3
 ENV MONGO_SPARK_VERSION 2.0.0-rc0
-ENV SCALA_VERSION 2.10
+ENV SCALA_VERSION 3.1.3
 
 WORKDIR ${HOME}
 
