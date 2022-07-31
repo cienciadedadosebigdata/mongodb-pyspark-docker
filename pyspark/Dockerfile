@@ -16,8 +16,8 @@ RUN useradd --create-home --shell /bin/bash ubuntu
 ENV HOME /home/ubuntu
 ENV SPARK_VERSION 3.3.0
 ENV HADOOP_VERSION 3
-ENV MONGO_SPARK_VERSION 2.0.0-rc0
-ENV SCALA_VERSION 3.1.3
+ENV MONGO_SPARK_VERSION 3.0.1
+ENV SCALA_VERSION 2.12.3
 
 WORKDIR ${HOME}
 
@@ -33,6 +33,6 @@ USER ubuntu
 
 # get spark
 RUN wget https://downloads.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
-tar xvf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
+tar -xvzf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
 
 RUN rm -fv spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
