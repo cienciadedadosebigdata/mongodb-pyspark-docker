@@ -29,7 +29,7 @@ From the spark instance, you could reach the MongoDB instance using `mongodb` ho
 You can find a small dataset example in `/home/ubuntu/times.json` which you can load using [initDocuments.py](pyspark/files/initDocuments.py) :
 
 ```
-pyspark --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} ./initDocuments.py
+pyspark --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 ./initDocuments.py
 ```
 
 
