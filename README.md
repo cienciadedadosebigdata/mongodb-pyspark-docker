@@ -38,7 +38,7 @@ For example, please see [examples.py](pyspark/files/examples.py) load dataframes
 Run the `pyspark` by executing: 
 
 ```sh
-pyspark --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION}
+pyspark --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.1
 ```
 
 To set session wide option you can also specify: 
@@ -50,7 +50,7 @@ pyspark --conf "spark.mongodb.input.uri=mongodb://mongodb:27017/spark.times" --c
 You can also append `<file.py>` to execute a python file via spark-submit. For example: 
 
 ```sh
-spark-submit --packages org.mongodb.spark:mongo-spark-connector_${SCALA_VERSION}:${MONGO_SPARK_VERSION} ./examples.py 
+spark-submit --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 ./examples.py 
 ```
 
 ### More Information. 
